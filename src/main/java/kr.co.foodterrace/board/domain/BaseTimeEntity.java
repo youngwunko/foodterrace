@@ -1,4 +1,4 @@
-package domain;
+package kr.co.foodterrace.board.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

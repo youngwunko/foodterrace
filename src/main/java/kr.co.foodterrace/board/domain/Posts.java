@@ -1,11 +1,14 @@
-package domain;
+package kr.co.foodterrace.board.domain;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Getter
+@NoArgsConstructor
 @Entity
 public class Posts extends BaseTimeEntity {
     @Id
@@ -23,11 +26,12 @@ public class Posts extends BaseTimeEntity {
 
     private Long readNum;
 
-    public Posts(String title, String author, String content) {
+    @Builder
+    public Posts(String title, String author, String content, Long readNum) {
         this.title = title;
         this.author = author;
         this.content = content;
-        this.readNum = Long.valueOf(0);
+        this.readNum = readNum;
     }
 
     public void update(String author, String content) {
