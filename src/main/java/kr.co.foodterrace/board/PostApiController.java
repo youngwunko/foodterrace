@@ -3,9 +3,7 @@ package kr.co.foodterrace.board;
 import kr.co.foodterrace.board.dto.PostsSaveRequestDto;
 import kr.co.foodterrace.board.services.posts.PostsService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
