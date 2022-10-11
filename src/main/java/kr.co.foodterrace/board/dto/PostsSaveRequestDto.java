@@ -24,7 +24,7 @@ public class PostsSaveRequestDto {
                     .title(title)
                     .author(author)
                     .content(content)
-                    .readNum(Long.valueOf(0))
+                    .viewNum(Long.valueOf(0))
                     .build();
     }
 }

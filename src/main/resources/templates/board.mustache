@@ -1,33 +1,38 @@
 {{>layout/header}}
 
 <h1>게시판</h1>
-<div class="col-md-12">
-    <div class="table">
-        <table>
-            <thead>
-                <tr>
-                    <th>글번호</th>
-                    <th class="col-md-6">제목</th>
-                    <th>작성자</th>
-                    <th>작성일</th>
-                    <th>조회수</th>
-                </tr>
-            </thead>
-            <tbody>
-            {{#posts}}
-                <tr>
-                    <td>{{idx}}</td>
-                    <td class="col-md-6">{{title}}</td>
-                    <td>{{author}}</td>
-                    <td>{{createdDate}}</td>
-                    <td>{{readNum}}</td>
-                </tr>
-            {{/posts}}
-            </tbody>
-        </table>
+<div>
+
+    <div class="col-md-12">
+        <div class="table">
+            <table class="table table-striped text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>글번호</th>
+                        <th class="col-md-6">제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#posts}}
+                    <tr>
+                        <td>{{idx}}</td>
+                        <td class="col-md-6 text-left"><a href="/post/{idx}">{{title}}</a></td>
+                        <td>{{author}}</td>
+                        <td>{{createdDate}}</td>
+                        <td>{{viewNum}}</td>
+                    </tr>
+                {{/posts}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="float-right">
+        <a href="/post/save" role="button" class="btn btn-primary">글쓰기</a>
     </div>
 </div>
-<br>
-<a href="/post/save" role="button" class="btn btn-primary">글쓰기</a>
 
 {{>layout/footer}}
