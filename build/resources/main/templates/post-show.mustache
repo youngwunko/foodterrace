@@ -1,5 +1,23 @@
 {{>layout/header}}
 
-
+<div class="container">
+    <div class="row text-center align-middle">
+        <div class="col-md-4 text-left">{{post.title}}</div>
+        <div class="col-md-2"><strong>작성자</strong><br>{{post.author}}</div>
+        <div class="col-md-2"><strong>작성일</strong><br>{{post.createdDate}}</div>
+        <div class="col-md-2"><strong>수정일</strong><br>{{post.lastModifiedDate}}</div>
+        <div class="col-md-2"><strong>조회수</strong><br>{{post.viewNum}}</div>
+    </div>
+</div>
+<br>
+<div>
+    {{post.content}}
+</div>
+<br>
+<div class="row float-right">
+    <a href="/post/update/{{post.idx}}" role="button" class="btn btn-secondary" id="btn-post-update">수정</a>
+    <button role="button" class="btn btn-danger" id="btn-post-delete">삭제</button>
+    <div class="d-none" id="idx">{{post.idx}}</div>
+</div>
 
 {{>layout/footer}}

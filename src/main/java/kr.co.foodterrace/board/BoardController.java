@@ -30,4 +30,11 @@ public class BoardController {
         model.addAttribute("post", responseDto);
         return "post-show";
     }
+
+    @GetMapping("/post/update/{idx}")
+    public String updatePost(@PathVariable Long idx, Model model) {
+        PostsResponseDto responseDto = postsService.findByIdx(idx);
+        model.addAttribute("post", responseDto);
+        return "post-update";
+    }
 }
