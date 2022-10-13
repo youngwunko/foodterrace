@@ -30,11 +30,11 @@ var main = {
         });
     },
     delete : function() {
-        var idx = $('#idx').val();
+        var idx = $('#idx').text();
 
         $.ajax({
             type: 'DELETE',
-            url: '/api/post/'+idx,
+            url: '/api/post/' + idx,
             dataType: 'json',
             contentType: 'application/json; charset=utf-8'
         }).done(function() {
