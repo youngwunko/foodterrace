@@ -5,6 +5,10 @@ var main = {
             _this.save();
         });
 
+        $('#btn-post-update').on('click', function() {
+            _this.update();
+        });
+
         $('#btn-post-delete').on('click', function() {
             _this.delete();
         });
@@ -29,6 +33,27 @@ var main = {
             alert(JSON.stringify(error));
         });
     },
+    update : function() {
+        var data = {
+            title: $('#title').val(),
+            content: $('#content').val()
+        };
+
+        var idx = $('#idx').text();
+
+        $.ajax({
+            type: 'PUT',
+            url: '/api/post/' + idx,
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function() {
+            alert('수정하였습니다.');
+            window.location.href = '/board';
+        }).fail(function(error) {
+            alert(JSON.stringify(error));
+        });
+    },
     delete : function() {
         var idx = $('#idx').text();
 
@@ -39,9 +64,9 @@ var main = {
             contentType: 'application/json; charset=utf-8'
         }).done(function() {
             alert('글을 삭제했습니다.');
-            window.location.href = '/board';
+            window.location.href = '/post/' + idx;
         }).fail(function(error) {
-            alert(JSON.stringify(error));
+            alert('제목을 입력해주세요');
         });
     }
 };
